@@ -19,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				poppins: ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -116,6 +119,7 @@ export default {
 			},
 			backgroundImage: {
 				'neon-gradient': 'linear-gradient(135deg, #FF1E56, #FFAC41)',
+				'hero-pattern': 'radial-gradient(circle at 50% 50%, rgba(255, 30, 86, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 172, 65, 0.15) 0%, transparent 40%)',
 			}
 		}
 	},
