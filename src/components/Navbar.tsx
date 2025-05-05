@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,17 +28,20 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold neon-gradient-text">
+          <Link to="/" className="text-2xl font-bold neon-gradient-text">
             Ruhul Engineering
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="hover:text-neon-yellow transition-colors">
+              Home
+            </Link>
+            <Link to="/team" className="hover:text-neon-yellow transition-colors">
+              Team
+            </Link>
             <a href="#about" className="hover:text-neon-yellow transition-colors">
               About
-            </a>
-            <a href="#dream" className="hover:text-neon-yellow transition-colors">
-              Our Dream
             </a>
             <a href="#products" className="hover:text-neon-yellow transition-colors">
               Products
@@ -67,11 +71,14 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden glass-card mt-4 py-4 px-4 rounded-lg">
             <div className="flex flex-col space-y-4">
+              <Link to="/" className="hover:text-neon-yellow" onClick={() => setIsOpen(false)}>
+                Home
+              </Link>
+              <Link to="/team" className="hover:text-neon-yellow" onClick={() => setIsOpen(false)}>
+                Team
+              </Link>
               <a href="#about" className="hover:text-neon-yellow" onClick={() => setIsOpen(false)}>
                 About
-              </a>
-              <a href="#dream" className="hover:text-neon-yellow" onClick={() => setIsOpen(false)}>
-                Our Dream
               </a>
               <a href="#products" className="hover:text-neon-yellow" onClick={() => setIsOpen(false)}>
                 Products
